@@ -2,43 +2,43 @@ import { Link } from "react-router-dom";
 
 const gutscheinCards = [
   {
-    icon: "🏎️",
     title: "Instruktorfahrt — 30 Minuten",
     text: "30 Minuten im McLaren 720S mit professionellem Instruktor Roy. Ideal als Geburtstagsgeschenk.",
     badge: "Bestseller",
     price: "Preis auf Anfrage",
+    number: "01",
   },
   {
-    icon: "⚡",
     title: "Instruktorfahrt — 60 Minuten",
     text: "Die volle Stunde — auch über die Autobahn. Das ultimative Erlebnis als Geschenk.",
     badge: "Empfohlen",
     price: "Preis auf Anfrage",
+    number: "02",
   },
   {
-    icon: "🔑",
     title: "Wunschfahrzeug mieten",
     text: "Individueller Gutschein für die Miete eines Wunschfahrzeugs. Betrag und Fahrzeug frei wählbar.",
     badge: "Individuell",
     price: "Wunschbetrag",
+    number: "03",
   },
 ];
 
 const whyPoints = [
-  { icon: "🎯", text: "Unvergessliches Erlebnis statt unnötiger Geschenke" },
-  { icon: "📱", text: "Schnell und unkompliziert anfragen" },
-  { icon: "📅", text: "Terminwahl flexibel nach Absprache" },
-  { icon: "🚗", text: "Für jeden Autobegeisterten das perfekte Geschenk" },
+  { title: "Erlebnis", text: "Unvergessliches Erlebnis statt unnötiger Geschenke" },
+  { title: "Unkompliziert", text: "Schnell und unkompliziert anfragen" },
+  { title: "Flexibel", text: "Terminwahl flexibel nach Absprache" },
+  { title: "Perfekt", text: "Für jeden Autobegeisterten das perfekte Geschenk" },
 ];
 
 const occasions = [
-  "🎂 Geburtstag",
-  "🎓 Abitur",
-  "💍 Hochzeit",
-  "🏆 Jubiläum",
-  "🎄 Weihnachten",
-  "👨‍👦 Vatertag",
-  "💝 Valentinstag",
+  "Geburtstag",
+  "Abitur",
+  "Hochzeit",
+  "Jubiläum",
+  "Weihnachten",
+  "Vatertag",
+  "Valentinstag",
 ];
 
 const giftReviews = [
@@ -162,7 +162,7 @@ export default function Gutschein() {
               href="tel:00491603090886"
               className="bg-[hsl(0,0%,100%)] text-[hsl(0,0%,4%)] px-8 py-3 font-semibold rounded-sm hover:opacity-90 transition-opacity"
             >
-              📞 0160 3090886
+              0160 3090886
             </a>
             <Link
               to="/kontakt"
