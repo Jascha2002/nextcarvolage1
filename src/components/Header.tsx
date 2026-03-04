@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
+import logoWhite from "@/assets/logo-white.png";
+import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -49,9 +51,9 @@ export default function Header() {
       <div className="container mx-auto h-full flex items-center justify-between px-4">
         <Link to="/">
           <img
-            src="https://nextcar-exklusiv.de/wp-content/uploads/2024/09/cropped-nextcar-logo-original_invert-180x54.png"
+            src={logoWhite}
             alt="NextCar Logo"
-            className="h-10 dark:invert-0 invert"
+            className="h-10 dark:brightness-100 brightness-0"
           />
         </Link>
 
