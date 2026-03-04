@@ -19,13 +19,20 @@ const navLinks = [
     ],
   },
   { label: "Kontakt", to: "/kontakt" },
-  { label: "Gutschein", to: "/gutschein", highlight: true },
+  {
+    label: "Gutschein",
+    highlight: true,
+    children: [
+      { label: "Gutschein kaufen", to: "/gutschein/kaufen" },
+      { label: "Gutschein einlösen", to: "/gutschein/einloesen" },
+    ],
+  },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(true);
-  const [infoOpen, setInfoOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -44,7 +51,7 @@ export default function Header() {
 
   useEffect(() => {
     setMobileOpen(false);
-    setInfoOpen(false);
+    setOpenDropdown(null);
   }, [location]);
 
   return (
@@ -64,13 +71,17 @@ export default function Header() {
             item.children ? (
               <div key={item.label} className="relative">
                 <button
-                  onClick={() => setInfoOpen(!infoOpen)}
-                  className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-accent transition-colors"
+                  onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                    (item as any).highlight
+                      ? "bg-accent text-accent-foreground px-4 py-1.5 rounded-sm hover:opacity-90"
+                      : "text-foreground hover:text-accent"
+                  }`}
                 >
                   {item.label} <ChevronDown size={14} />
                 </button>
-                {infoOpen && (
-                  <div className="absolute top-full mt-2 left-0 bg-card border border-accent rounded-sm shadow-lg min-w-[180px] py-2">
+                {openDropdown === item.label && (
+                  <div className="absolute top-full mt-2 left-0 bg-card border border-accent rounded-sm shadow-lg min-w-[200px] py-2">
                     {item.children.map((child) => (
                       <Link
                         key={child.to}
@@ -87,11 +98,7 @@ export default function Header() {
               <Link
                 key={item.to}
                 to={item.to!}
-                className={`text-sm font-medium transition-colors ${
-                  (item as any).highlight
-                    ? "bg-accent text-accent-foreground px-4 py-1.5 rounded-sm hover:opacity-90"
-                    : "text-foreground hover:text-accent"
-                }`}
+                className="text-sm font-medium transition-colors text-foreground hover:text-accent"
               >
                 {item.label}
               </Link>
@@ -133,11 +140,13 @@ export default function Header() {
 
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-[70px] bg-background z-40 flex flex-col items-center justify-center gap-6">
+        <div className="lg:hidden fixed inset-0 top-[70px] bg-background z-40 flex flex-col items-center justify-center gap-6 overflow-y-auto py-8">
           {navLinks.map((item) =>
             item.children ? (
               <div key={item.label} className="flex flex-col items-center gap-3">
-                <span className="font-display text-2xl text-foreground">{item.label}</span>
+                <span className={`font-display text-2xl ${(item as any).highlight ? "text-accent" : "text-foreground"}`}>
+                  {item.label}
+                </span>
                 {item.children.map((child) => (
                   <Link key={child.to} to={child.to} className="text-muted-foreground text-lg hover:text-accent">
                     {child.label}
@@ -148,9 +157,7 @@ export default function Header() {
               <Link
                 key={item.to}
                 to={item.to!}
-                className={`font-display text-2xl hover:text-accent ${
-                  (item as any).highlight ? "text-accent" : "text-foreground"
-                }`}
+                className="font-display text-2xl hover:text-accent text-foreground"
               >
                 {item.label}
               </Link>
