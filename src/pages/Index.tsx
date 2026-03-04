@@ -296,6 +296,44 @@ export default function Index() {
         </div>
       </Section>
 
+      {/* GUTSCHEIN TEASER */}
+      <Section className="py-20 bg-[hsl(0,0%,4%)] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-accent/5" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-display text-4xl md:text-5xl text-[hsl(0,0%,100%)] mb-4">VERSCHENKE EIN ERLEBNIS</h2>
+              <p className="text-[hsl(0,0%,60%)] mb-6">
+                Ein NextCar Gutschein ist das perfekte Geschenk für jeden Anlass — Geburtstag, Abitur, Weihnachten oder einfach so.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {["🎂 Geburtstag", "🎓 Abitur", "🎄 Weihnachten", "💍 Hochzeit", "👨‍👦 Vatertag"].map((o) => (
+                  <span key={o} className="bg-[hsl(0,0%,12%)] text-[hsl(0,0%,80%)] px-4 py-1.5 rounded-full text-sm">{o}</span>
+                ))}
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link to="/gutschein/kaufen" className="bg-accent text-accent-foreground px-8 py-3 font-semibold rounded-sm hover:opacity-90 transition-opacity text-center">
+                  Gutschein kaufen
+                </Link>
+                <Link to="/gutschein/einloesen" className="border-2 border-[hsl(0,0%,100%)] text-[hsl(0,0%,100%)] px-8 py-3 font-semibold rounded-sm hover:bg-[hsl(0,0%,100%)] hover:text-[hsl(0,0%,0%)] transition-colors text-center">
+                  Gutschein einlösen
+                </Link>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="bg-[hsl(0,0%,6%)] border border-[hsl(0,0%,20%)] rounded-sm p-8 max-w-xs w-full text-center relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-[hsl(40,80%,50%)] to-accent" />
+                <p className="font-display text-4xl text-[hsl(0,0%,100%)] tracking-wider mb-2">GUTSCHEIN</p>
+                <div className="w-12 h-0.5 bg-accent mx-auto my-4" />
+                <p className="text-[hsl(0,0%,50%)] text-xs font-mono mb-2">NXT-XXXX-XXXX</p>
+                <p className="text-accent text-sm italic">Unvergessliches Erlebnis</p>
+                <p className="text-[hsl(0,0%,30%)] text-xs mt-4">nextcar-exklusiv.de</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* INSTAGRAM */}
       <Section className="py-20">
         <div className="container mx-auto px-4 text-center">

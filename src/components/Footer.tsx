@@ -8,11 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & tagline */}
           <div>
-            <img
-              src={logoWhite}
-              alt="NextCar Logo"
-              className="h-10 mb-4"
-            />
+            <img src={logoWhite} alt="NextCar Logo" className="h-10 mb-4" />
             <p className="text-sm text-[hsl(0,0%,60%)]">Fahrspaß pur. Deutschlandweit.</p>
           </div>
 
@@ -25,6 +21,8 @@ export default function Footer() {
                 ["Fahrzeuge", "/fahrzeuge"],
                 ["Anlässe", "/anlaesse"],
                 ["Instruktorfahrt", "/instruktorfahrt"],
+                ["Gutschein kaufen", "/gutschein/kaufen"],
+                ["Gutschein einlösen", "/gutschein/einloesen"],
                 ["Versicherung", "/versicherung"],
                 ["Übergabeprozess", "/uebergabe"],
                 ["FAQ", "/faq"],

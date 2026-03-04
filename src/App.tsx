@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingElements from "./components/FloatingElements";
@@ -20,7 +20,8 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 import Galerie from "./pages/Galerie";
-import Gutschein from "./pages/Gutschein";
+import GutscheinKaufen from "./pages/GutscheinKaufen";
+import GutscheinEinloesen from "./pages/GutscheinEinloesen";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,7 +44,9 @@ const App = () => (
             <Route path="/faq" element={<FAQ />} />
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/galerie" element={<Galerie />} />
-            <Route path="/gutschein" element={<Gutschein />} />
+            <Route path="/gutschein" element={<Navigate to="/gutschein/kaufen" replace />} />
+            <Route path="/gutschein/kaufen" element={<GutscheinKaufen />} />
+            <Route path="/gutschein/einloesen" element={<GutscheinEinloesen />} />
             <Route path="/versicherung" element={<Versicherung />} />
             <Route path="/uebergabe" element={<Uebergabe />} />
             <Route path="/impressum" element={<Impressum />} />
