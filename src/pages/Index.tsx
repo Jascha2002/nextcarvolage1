@@ -71,10 +71,10 @@ function useInView(threshold = 0.15) {
   return { ref, visible };
 }
 
-function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Section({ children, className = "", id }: { children: React.ReactNode; className?: string; id?: string }) {
   const { ref, visible } = useInView();
   return (
-    <section ref={ref} className={`${className} transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+    <section ref={ref} id={id} className={`${className} transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
       {children}
     </section>
   );
@@ -174,7 +174,7 @@ export default function Index() {
                     to={car.link}
                     className="mt-4 inline-block bg-accent text-accent-foreground px-6 py-2.5 text-sm font-semibold rounded-sm hover:opacity-90 transition-opacity"
                   >
-                    {car.btnText || "Jetzt buchen"}
+                    {(car as any).btnText || "Jetzt buchen"}
                   </Link>
                 </div>
               </div>
