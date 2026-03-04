@@ -110,7 +110,7 @@ function Section({ children, className = "", id }: { children: React.ReactNode; 
 }
 
 export default function Index() {
-  const [reviewIdx, setReviewIdx] = useState(0);
+  
   
   // Hero video animation phases
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -168,13 +168,6 @@ export default function Index() {
   const showVideo = heroPhase === 'video';
   const isDone = heroPhase === 'done';
 
-  // Auto-scroll reviews every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setReviewIdx((prev) => (prev + 1) % reviews.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div>
@@ -368,7 +361,7 @@ export default function Index() {
         </div>
       </Section>
 
-      {/* BEWERTUNGEN */}
+      {/* BEWERTUNGEN TEASER */}
       <Section className="py-20 bg-secondary" id="bewertungen">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">DAS SAGEN UNSERE KUNDEN</h2>
@@ -381,45 +374,26 @@ export default function Index() {
             Top bewertet auf Google
           </span>
 
-          {/* Carousel */}
-          <div className="relative max-w-6xl mx-auto overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${reviewIdx * (100 / 3)}%)` }}
-            >
-              {reviews.map((r, i) => (
-                <div key={i} className="w-full md:w-1/3 flex-shrink-0 px-3">
-                  <div className="bg-card p-6 rounded-sm border-t-4 border-accent shadow-lg h-full flex flex-col">
-                    <p className="text-accent mb-1 text-sm">⭐⭐⭐⭐⭐</p>
-                    <p className="text-foreground italic text-sm flex-1">"{r.text}"</p>
-                    <div className="mt-4 pt-3 border-t border-muted">
-                      <p className="text-foreground font-semibold text-sm">{r.name}</p>
-                      <p className="text-muted-foreground text-xs">{r.date}</p>
-                    </div>
-                  </div>
+          {/* Show 3 featured reviews */}
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+            {reviews.slice(0, 3).map((r, i) => (
+              <div key={i} className="bg-card p-6 rounded-sm border-t-4 border-accent shadow-lg text-left">
+                <p className="text-accent mb-1 text-sm">⭐⭐⭐⭐⭐</p>
+                <p className="text-foreground italic text-sm line-clamp-4">"{r.text}"</p>
+                <div className="mt-4 pt-3 border-t border-muted">
+                  <p className="text-foreground font-semibold text-sm">{r.name}</p>
+                  <p className="text-muted-foreground text-xs">{r.date}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Dots */}
-          <div className="flex justify-center gap-1.5 mt-6 flex-wrap">
-            {reviews.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setReviewIdx(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${i === reviewIdx ? "bg-accent" : "bg-muted-foreground/30"}`}
-              />
+              </div>
             ))}
           </div>
-          <a
-            href="https://www.google.com/maps/place/NextCar+Exklusiv/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-6 bg-accent text-accent-foreground px-6 py-2.5 text-sm font-semibold rounded-sm hover:opacity-90 transition-opacity"
+
+          <Link
+            to="/bewertungen"
+            className="inline-block bg-accent text-accent-foreground px-6 py-2.5 text-sm font-semibold rounded-sm hover:opacity-90 transition-opacity"
           >
-            Alle Bewertungen auf Google lesen →
-          </a>
+            Alle {reviews.length} Bewertungen lesen →
+          </Link>
         </div>
       </Section>
 
