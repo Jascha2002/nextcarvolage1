@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoWhite from "@/assets/logo-white.png";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
           {/* Logo & tagline */}
           <div>
             <img
-              src="https://nextcar-exklusiv.de/wp-content/uploads/2024/09/cropped-nextcar-logo-original_invert-180x54.png"
+              src={logoWhite}
               alt="NextCar Logo"
               className="h-10 mb-4"
             />
