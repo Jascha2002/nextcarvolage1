@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Galerie", to: "/galerie" },
   { label: "Anlässe", to: "/anlaesse" },
   { label: "Instruktorfahrt", to: "/instruktorfahrt" },
-  { label: "Bewertungen", to: "/#bewertungen" },
+  { label: "Bewertungen", to: "/bewertungen" },
   {
     label: "Info",
     children: [

@@ -20,6 +20,7 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 import Galerie from "./pages/Galerie";
+import Bewertungen from "./pages/Bewertungen";
 import GutscheinKaufen from "./pages/GutscheinKaufen";
 import GutscheinEinloesen from "./pages/GutscheinEinloesen";
 import NotFound from "./pages/NotFound";
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/faq" element={<FAQ />} />
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/galerie" element={<Galerie />} />
+            <Route path="/bewertungen" element={<Bewertungen />} />
             <Route path="/gutschein" element={<Navigate to="/gutschein/kaufen" replace />} />
             <Route path="/gutschein/kaufen" element={<GutscheinKaufen />} />
             <Route path="/gutschein/einloesen" element={<GutscheinEinloesen />} />
