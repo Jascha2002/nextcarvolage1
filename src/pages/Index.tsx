@@ -111,6 +111,62 @@ function Section({ children, className = "", id }: { children: React.ReactNode; 
 
 export default function Index() {
   const [reviewIdx, setReviewIdx] = useState(0);
+  
+  // Hero video animation phases
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [heroPhase, setHeroPhase] = useState<'video' | 'black' | 'headline' | 'elements' | 'reveal' | 'done'>('video');
+  const [videoCanPlay, setVideoCanPlay] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => setVideoCanPlay(true);
+    const handleError = () => setVideoFailed(true);
+    const handleEnded = () => {
+      // Phase 2: fade to black
+      setHeroPhase('black');
+      setTimeout(() => {
+        // Phase 3: headline appears
+        setHeroPhase('headline');
+        setTimeout(() => {
+          // Phase 4: remaining elements
+          setHeroPhase('elements');
+          setTimeout(() => {
+            // Phase 5: reveal background
+            setHeroPhase('reveal');
+            setTimeout(() => setHeroPhase('done'), 1500);
+          }, 1300); // 0.8s animation + 0.5s wait
+        }, 800);
+      }, 500);
+    };
+
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('error', handleError);
+    video.addEventListener('ended', handleEnded);
+
+    // Try autoplay
+    video.play().catch(() => setVideoFailed(true));
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('error', handleError);
+      video.removeEventListener('ended', handleEnded);
+    };
+  }, []);
+
+  // If video fails (e.g. mobile), skip to done
+  useEffect(() => {
+    if (videoFailed) setHeroPhase('done');
+  }, [videoFailed]);
+
+  const showHeadline = heroPhase === 'headline' || heroPhase === 'elements' || heroPhase === 'reveal' || heroPhase === 'done';
+  const showElements = heroPhase === 'elements' || heroPhase === 'reveal' || heroPhase === 'done';
+  const showBgImage = heroPhase === 'reveal' || heroPhase === 'done';
+  const isBlackBg = heroPhase === 'black' || heroPhase === 'headline' || heroPhase === 'elements';
+  const showVideo = heroPhase === 'video';
+  const isDone = heroPhase === 'done';
 
   // Auto-scroll reviews every 5 seconds
   useEffect(() => {
@@ -123,26 +179,89 @@ export default function Index() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[hsl(0,0%,0%)]">
+        {/* Video */}
+        <video
+          ref={videoRef}
+          src="/hero-video.mp4"
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+          style={{ opacity: showVideo ? 1 : 0 }}
+        />
+
+        {/* Background image - fades in during Phase 5 */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${CARS.mclaren.img})` }}
+          style={{
+            backgroundImage: `url(${CARS.mclaren.img})`,
+            opacity: showBgImage ? 1 : 0,
+            transition: isDone ? 'none' : 'opacity 1.5s ease-in-out',
+          }}
         />
-        <div className="absolute inset-0 bg-[hsl(0,0%,0%)] opacity-60" />
+
+        {/* Dark overlay for video and final state */}
+        <div
+          className="absolute inset-0 transition-opacity duration-500"
+          style={{
+            backgroundColor: 'hsl(0,0%,0%)',
+            opacity: showVideo ? 0.55 : isBlackBg ? 1 : showBgImage ? 0.6 : 1,
+          }}
+        />
+
+        {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-4xl">
-          <span className="inline-block bg-accent text-accent-foreground text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+          {/* Badge */}
+          <span
+            className="inline-block bg-accent text-accent-foreground text-xs font-semibold px-4 py-1.5 rounded-full mb-6 transition-all duration-[800ms] ease-out"
+            style={{
+              opacity: showElements ? 1 : 0,
+              transform: showElements ? 'translateY(0)' : 'translateY(20px)',
+            }}
+          >
             🏎️ Deutschlandweite Auslieferung
           </span>
-          <h1 className="font-display text-6xl sm:text-8xl md:text-[100px] leading-none text-[hsl(0,0%,100%)]">
+
+          {/* Headlines */}
+          <h1
+            className="font-display text-6xl sm:text-8xl md:text-[100px] leading-none text-[hsl(0,0%,100%)] transition-all duration-[800ms] ease-out"
+            style={{
+              opacity: showHeadline ? 1 : 0,
+              transform: showHeadline ? 'translateY(0)' : 'translateY(20px)',
+            }}
+          >
             MIT NEXTCAR
           </h1>
-          <h2 className="font-display text-6xl sm:text-8xl md:text-[100px] leading-none text-accent">
+          <h2
+            className="font-display text-6xl sm:text-8xl md:text-[100px] leading-none text-accent transition-all duration-[800ms] ease-out"
+            style={{
+              opacity: showHeadline ? 1 : 0,
+              transform: showHeadline ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: showHeadline && !showElements ? '0.1s' : '0s',
+            }}
+          >
             FAHRSPASS PUR ERLEBEN
           </h2>
-          <p className="mt-6 text-[hsl(0,0%,80%)] text-lg max-w-xl mx-auto">
+
+          {/* Subtext */}
+          <p
+            className="mt-6 text-[hsl(0,0%,80%)] text-lg max-w-xl mx-auto transition-all duration-[800ms] ease-out"
+            style={{
+              opacity: showElements ? 1 : 0,
+              transform: showElements ? 'translateY(0)' : 'translateY(20px)',
+            }}
+          >
             Erleben Sie Supersportwagen der Extraklasse — McLaren, BMW, Audi und mehr. Ab einem Tag. Deutschlandweit geliefert.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* Buttons */}
+          <div
+            className="mt-8 flex flex-col sm:flex-row gap-4 justify-center transition-all duration-[800ms] ease-out"
+            style={{
+              opacity: showElements ? 1 : 0,
+              transform: showElements ? 'translateY(0)' : 'translateY(20px)',
+            }}
+          >
             <Link to="/buchen" className="bg-accent text-accent-foreground px-8 py-3 font-semibold rounded-sm hover:opacity-90 transition-opacity">
               Jetzt buchen
             </Link>
@@ -151,7 +270,15 @@ export default function Index() {
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow">
+
+        {/* Scroll indicator */}
+        <div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow transition-all duration-[800ms] ease-out"
+          style={{
+            opacity: showElements ? 1 : 0,
+            transform: `translateX(-50%) ${showElements ? 'translateY(0)' : 'translateY(20px)'}`,
+          }}
+        >
           <ChevronDown size={32} className="text-[hsl(0,0%,100%)]" />
         </div>
       </section>
