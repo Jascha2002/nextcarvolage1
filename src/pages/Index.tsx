@@ -110,7 +110,7 @@ function Section({ children, className = "", id }: { children: React.ReactNode; 
 }
 
 export default function Index() {
-  const [reviewIdx, setReviewIdx] = useState(0);
+  
   
   // Hero video animation phases
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -168,13 +168,6 @@ export default function Index() {
   const showVideo = heroPhase === 'video';
   const isDone = heroPhase === 'done';
 
-  // Auto-scroll reviews every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setReviewIdx((prev) => (prev + 1) % reviews.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div>
