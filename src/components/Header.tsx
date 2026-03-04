@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
-import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { label: "Home", to: "/" },
