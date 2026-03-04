@@ -9,7 +9,6 @@ import insta5 from "@/assets/instagram/insta-5.jpg";
 import insta6 from "@/assets/instagram/insta-6.jpg";
 
 const instaImages = [insta1, insta2, insta3, insta4, insta5, insta6];
-import { useState, useRef, useEffect } from "react";
 
 const CARS = {
   mclaren: {
