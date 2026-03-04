@@ -62,7 +62,7 @@ export default function Gutschein() {
       {/* Hero */}
       <section className="bg-background py-20 text-center border-b border-accent">
         <h1 className="font-display text-5xl md:text-7xl text-foreground">
-          DAS PERFEKTE GESCHENK 🎁
+          DAS PERFEKTE GESCHENK
         </h1>
         <p className="text-muted-foreground mt-3 text-lg max-w-2xl mx-auto px-4">
           Schenke ein unvergessliches Erlebnis — einen NextCar Gutschein für die Instruktorfahrt oder Fahrzeugmiete.
@@ -75,15 +75,17 @@ export default function Gutschein() {
           {gutscheinCards.map((card) => (
             <div
               key={card.title}
-              className="bg-card rounded-sm border-t-4 border-accent p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow"
+              className="bg-card rounded-sm border-t-4 border-accent p-8 flex flex-col text-left hover:shadow-xl transition-shadow group"
             >
-              <span className="text-4xl mb-4">{card.icon}</span>
-              <span className="bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full mb-4">
-                {card.badge}
-              </span>
+              <div className="flex items-center justify-between mb-6">
+                <span className="font-display text-5xl text-accent/20 group-hover:text-accent/40 transition-colors">{card.number}</span>
+                <span className="bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
+                  {card.badge}
+                </span>
+              </div>
               <h3 className="font-display text-2xl text-foreground mb-3">{card.title}</h3>
               <p className="text-sm text-muted-foreground mb-4 flex-1">{card.text}</p>
-              <p className="font-display text-xl text-accent mb-4">{card.price}</p>
+              <p className="font-display text-xl text-accent mb-6">{card.price}</p>
               <Link
                 to="/kontakt"
                 className="w-full bg-accent text-accent-foreground py-3 font-semibold rounded-sm hover:opacity-90 transition-opacity text-center block"
@@ -102,10 +104,11 @@ export default function Gutschein() {
             WARUM EIN NEXTCAR GUTSCHEIN?
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {whyPoints.map((p) => (
-              <div key={p.text} className="bg-card p-6 rounded-sm border-l-4 border-accent text-center">
-                <span className="text-3xl block mb-3">{p.icon}</span>
-                <p className="text-sm text-foreground">{p.text}</p>
+            {whyPoints.map((p, i) => (
+              <div key={p.title} className="bg-card p-6 rounded-sm border-l-4 border-accent">
+                <span className="font-display text-3xl text-accent/20 block mb-2">0{i + 1}</span>
+                <h3 className="font-display text-lg text-foreground mb-2">{p.title}</h3>
+                <p className="text-sm text-muted-foreground">{p.text}</p>
               </div>
             ))}
           </div>
