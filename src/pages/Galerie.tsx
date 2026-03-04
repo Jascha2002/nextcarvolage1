@@ -11,6 +11,16 @@ import bmw1 from "@/assets/gallery/bmw-1.jpg";
 import bmw2 from "@/assets/gallery/bmw-2.jpg";
 import bmw3 from "@/assets/gallery/bmw-3.jpg";
 import bmw4 from "@/assets/gallery/bmw-4.jpg";
+import bmw5 from "@/assets/gallery/bmw-5.jpg";
+import bmw6 from "@/assets/gallery/bmw-6.jpg";
+import bmw7 from "@/assets/gallery/bmw-7.jpg";
+import bmw8 from "@/assets/gallery/bmw-8.jpg";
+import bmw9 from "@/assets/gallery/bmw-9.jpg";
+import bmw10 from "@/assets/gallery/bmw-10.jpg";
+import bmw11 from "@/assets/gallery/bmw-11.jpg";
+import bmw12 from "@/assets/gallery/bmw-12.jpg";
+import bmw13 from "@/assets/gallery/bmw-13.jpg";
+import bmw14 from "@/assets/gallery/bmw-14.jpg";
 import rs31 from "@/assets/gallery/rs3-1.jpg";
 import rs32 from "@/assets/gallery/rs3-2.jpg";
 import rs33 from "@/assets/gallery/rs3-3.jpg";
@@ -46,6 +56,16 @@ const images: GalleryImage[] = [
   { src: bmw2, alt: "BMW M3 Seite", category: ["bmw"], tall: true },
   { src: bmw3, alt: "BMW M3 Detail", category: ["bmw"], tall: false },
   { src: bmw4, alt: "BMW M3 Front", category: ["bmw"], tall: true },
+  { src: bmw5, alt: "BMW M3 Schnee", category: ["bmw"], tall: false },
+  { src: bmw6, alt: "BMW M3 Schnee Front", category: ["bmw"], tall: false },
+  { src: bmw7, alt: "BMW M3 Schnee Frontal", category: ["bmw"], tall: true },
+  { src: bmw8, alt: "BMW M3 Niere Detail", category: ["bmw"], tall: false },
+  { src: bmw9, alt: "BMW M3 Heck Schnee", category: ["bmw"], tall: false },
+  { src: bmw10, alt: "BMW M3 Winterstraße", category: ["bmw"], tall: false },
+  { src: bmw11, alt: "BMW M3 Heck Straße", category: ["bmw"], tall: true },
+  { src: bmw12, alt: "BMW M3 Seite Winter", category: ["bmw"], tall: false },
+  { src: bmw13, alt: "BMW M3 Front Straße", category: ["bmw"], tall: true },
+  { src: bmw14, alt: "BMW M3 Seitenansicht", category: ["bmw"], tall: false },
   // Audi RS3
   { src: rs31, alt: "Audi RS3", category: ["rs3"], tall: true },
   { src: rs32, alt: "Audi RS3 Front", category: ["rs3"], tall: false },
