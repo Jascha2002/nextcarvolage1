@@ -51,10 +51,31 @@ const CARS = {
 };
 
 const reviews = [
-  { name: "Maximilian R.", text: "Absolut traumhaftes Erlebnis mit dem McLaren 720S. Die Abwicklung war professionell und unkompliziert. Kann NextCar jedem empfehlen der echten Fahrspaß sucht!" },
-  { name: "Sarah K.", text: "Perfekte Organisation, top gepflegtes Fahrzeug und super freundlicher Service. Das Erlebnis war einfach unvergesslich!" },
-  { name: "Thomas B.", text: "Instruktorfahrt als Geburtstagsgeschenk — mein Mann war absolut begeistert. Sehr zu empfehlen, werden definitiv wiederkommen!" },
-  { name: "Felix M.", text: "BMW M3 für ein Wochenende — einfach der Hammer. Fahrzeug in perfektem Zustand, Übergabe reibungslos. NextCar macht Träume wahr!" },
+  { name: "Alex Alex", date: "vor 5 Monaten", text: "Volle Punktzahl! Mein Sohn und ich haben heute den McLaren 720s testen dürfen. Roy ist super nett und hat 2 Runden mit meinem Junior gedreht. Ich kann jedem nur empfehlen, eine volle Stunde zu buchen. Am besten direkt bei Next Car — dort ist es günstiger als bei MyDay oder Schweizer! Der McLaren toppt alles." },
+  { name: "Nils", date: "vor 5 Monaten", text: "Ein wirklich erstklassiges Erlebnis! Der Instrukteur war super und man konnte sich sehr gut unterhalten. Dazu gab es genügend Infos zum Auto. Kann man einfach nur weiterempfehlen. Fahrspaß pur!" },
+  { name: "Witus", date: "vor 7 Monaten", text: "Ein Traum auf vier Rädern – McLaren 720S! Die Fahrt war absolut überwältigend! Die Beschleunigung, das Design, der Sound – einfach pure Gänsehaut. Alles war top organisiert. 100% Weiterempfehlung!" },
+  { name: "Nino Grothmann", date: "vor 9 Monaten", text: "Ein unvergessliches Erlebnis! Mein Vater hat mir und meinem Bruder jeweils eine Fahrt im McLaren 720S geschenkt. Die Beschleunigung, das Fahrgefühl, der Sound – einfach atemberaubend!" },
+  { name: "Enrico", date: "vor 9 Monaten", text: "Zu den entstandenen Fotos meinte ein Freund nur: da geht das Grinsen von einem Ohr zum nächsten. Besten Dank an das NextCar Team für den unvergesslichen Kurz-Trip mit dem McLaren 720S." },
+  { name: "Erik Schaal", date: "vor 5 Monaten", text: "Ich bin begeistert, es hat alles super geklappt, super angenehmer Beifahrer! Der McLaren ist natürlich ne Klasse für sich — ich fahre selbst ne Corvette aber das hier übertrifft es." },
+  { name: "Henrik Tausche", date: "vor 9 Monaten", text: "Heute dachte ich mir, befrei doch mal 720 Pferde! Bei schönstem Wetter gab es den ein oder anderen Galopp rund um Erfurt. Roy unterstützte mich super. Klare Empfehlung, Daumen hoch!" },
+  { name: "Simon Seipel", date: "vor 5 Monaten", text: "Es war ein Erlebnis, welches ich so schnell nicht vergessen werde! Abgesehen von der geballten Power des McLaren 720S war der Beifahrer super. Ich kann es nur jedem empfehlen!" },
+  { name: "Norman Kutzschke", date: "vor einem Jahr", text: "Einmal McLaren selber fahren — dieser Traum ging für mich in Erfüllung. Es war wirklich ein tolles Erlebnis. Sehr professionelle Betreuung und alles sehr fair. Gern wieder!" },
+  { name: "Moritz Hunger", date: "vor einem Jahr", text: "Ich durfte meinen lang ersehnten Traum erfüllen und den BMW M3 fahren! Die Betreuung von Robert während der Fahrt war einfach spitze! Man merkt dem Personal an dass der Spaß des Kunden absolut an erster Stelle steht." },
+  { name: "Julian Gerth", date: "vor 7 Monaten", text: "Ich durfte den McLaren 720S fahren — ich war noch nie sprachlos als ich ein Auto bewegt habe, hier schon. Unglaublicher Sound, atemberaubende Beschleunigung. Danke an Roy!" },
+  { name: "Benito König", date: "vor 10 Monaten", text: "Ein wirklich tolles Erlebnis und ein unvergesslicher Tag mit dem McLaren 720S. Es war alles perfekt geplant von Anfang bis Ende. Ich kann es jedem nur weiterempfehlen." },
+  { name: "Evgenia Airich", date: "vor 6 Monaten", text: "Wir haben bei NextCar einen BMW M3 für einen Tag gemietet — beste Entscheidung! Alles unkompliziert. Man merkt die Geschwindigkeit nur weil die anderen im Rückspiegel schnell klein werden." },
+  { name: "Steffen Löffler", date: "vor 6 Monaten", text: "Ich hatte heute einen unvergesslichen Tag mit dem M3 Touring! Perfekte Kommunikation, unkomplizierte Abwicklung und super nette Leute! Ich kann NextCar Exklusiv nur empfehlen!" },
+  { name: "David Trautmann", date: "vor einem Jahr", text: "Ich habe mir mit NextCar einen Traum erfüllt. Alles ging sehr seriös und reibungslos vonstatten. Ich kann es absolut nur empfehlen und würde gern noch mehr Sterne geben." },
+  { name: "Katja Preßler", date: "vor einem Jahr", text: "Vielen Dank für die tolle Möglichkeit! Einfach Fahrspaß pur — immer wieder mit euch. Top Betreuung und Einweisung. Der RS3 hat einfach nur Spaß gemacht. Das nächste Mal der McLaren!" },
+  { name: "Pro-Com GmbH", date: "vor 5 Monaten", text: "Es war ein unvergessliches Erlebnis. Roy hat alle unsere Wünsche erfüllt. Mein Ziel war die 340 zu erreichen — dieser Wunsch wurde mir ermöglicht. Ihr seid ein Traum!" },
+  { name: "Daniel", date: "vor 8 Monaten", text: "Den 14.06.25 bei schönstem Wetter werde ich nicht mehr vergessen — die eigene Fahrt im McLaren 720S war der absolute Hammer! Das von Roy gemachte Video treibt mir nach wie vor das breite Grinsen ins Gesicht." },
+  { name: "Johannes Bretzel", date: "vor 9 Monaten", text: "Ein unglaubliches Erlebnis mit dem McLaren 720S! Ich buche auf jeden Fall wieder — dann direkt über NextCar statt über Drittanbieter. Absolute Empfehlung!" },
+  { name: "Katja Böhme", date: "vor einem Jahr", text: "Ich durfte in 3 der Autos mitfahren — Audi RS3, BMW M3 und McLaren 720S. Als Frau die sich eigentlich wenig für Autos interessiert war das der Wahnsinn. Ich bin mit Freudentränen ausgestiegen!" },
+  { name: "Marina Kreutzer", date: "vor einem Jahr", text: "Von der ersten Anfrage bis zur Rückgabe alles unfassbar unkompliziert. Wir haben den M3 ausgeliehen für einen Tag. Fairer Preis, tolle Kommunikation — gern wieder!" },
+  { name: "Lucas Kraus", date: "vor einem Jahr", text: "Vielen Dank an das super nette Team von NextCar! Durfte heute den McLaren 720S fahren — es war der Hammer. Die Einweisung war sehr professionell. Würde ich jederzeit wieder machen!" },
+  { name: "Jacqueline Weiland", date: "vor einem Jahr", text: "Mein Sohn wollte unbedingt mal in einem Sportwagen mitfahren. Dieser Traum wurde an seinem 11. Geburtstag erfüllt. Sehr netter Kontakt und super Umgang mit meinem Sohn." },
+  { name: "Ramona Lindner", date: "vor einem Jahr", text: "Endlich habe ich meinen Traumwagen fahren dürfen. Habe den M3 für ein Wochenende gemietet — es war der Wahnsinn, unbeschreibliches Auto. Tolles Team, super Abwicklung!" },
+  { name: "Lea Tesch", date: "vor 8 Monaten", text: "Es war ein tolles Erlebnis das auf jeden Fall in Erinnerung bleibt — jederzeit wieder! Roy hat während der Fahrt Bilder und Videos gemacht und war super locker drauf." },
 ];
 
 const occasions = [
@@ -90,6 +111,14 @@ function Section({ children, className = "", id }: { children: React.ReactNode; 
 
 export default function Index() {
   const [reviewIdx, setReviewIdx] = useState(0);
+
+  // Auto-scroll reviews every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setReviewIdx((prev) => (prev + 1) % reviews.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div>
@@ -216,28 +245,53 @@ export default function Index() {
       <Section className="py-20 bg-secondary" id="bewertungen">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">DAS SAGEN UNSERE KUNDEN</h2>
-          <p className="text-accent mb-8">⭐⭐⭐⭐⭐ 5.0 auf Google</p>
-          <div className="max-w-2xl mx-auto bg-card p-8 rounded-sm shadow-lg min-h-[200px] flex flex-col justify-center">
-            <p className="text-accent mb-2">⭐⭐⭐⭐⭐</p>
-            <p className="text-foreground italic">"{reviews[reviewIdx].text}"</p>
-            <p className="text-muted-foreground mt-4 font-medium">— {reviews[reviewIdx].name}</p>
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <span className="text-accent text-xl">⭐⭐⭐⭐⭐</span>
+            <span className="font-display text-3xl text-foreground">5.0</span>
+            <span className="text-muted-foreground">— 35+ Bewertungen auf Google</span>
           </div>
-          <div className="flex justify-center gap-2 mt-6">
+          <span className="inline-block bg-accent text-accent-foreground text-xs font-bold px-4 py-1.5 rounded-full mb-8">
+            Top bewertet auf Google
+          </span>
+
+          {/* Carousel */}
+          <div className="relative max-w-6xl mx-auto overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${reviewIdx * (100 / 3)}%)` }}
+            >
+              {reviews.map((r, i) => (
+                <div key={i} className="w-full md:w-1/3 flex-shrink-0 px-3">
+                  <div className="bg-card p-6 rounded-sm border-t-4 border-accent shadow-lg h-full flex flex-col">
+                    <p className="text-accent mb-1 text-sm">⭐⭐⭐⭐⭐</p>
+                    <p className="text-foreground italic text-sm flex-1">"{r.text}"</p>
+                    <div className="mt-4 pt-3 border-t border-muted">
+                      <p className="text-foreground font-semibold text-sm">{r.name}</p>
+                      <p className="text-muted-foreground text-xs">{r.date}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-1.5 mt-6 flex-wrap">
             {reviews.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setReviewIdx(i)}
-                className={`w-3 h-3 rounded-full transition-colors ${i === reviewIdx ? "bg-accent" : "bg-muted-foreground"}`}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${i === reviewIdx ? "bg-accent" : "bg-muted-foreground/30"}`}
               />
             ))}
           </div>
           <a
-            href="https://www.google.com/maps/place/NextCar"
+            href="https://www.google.com/maps/place/NextCar+Exklusiv/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-6 text-accent text-sm font-medium hover:underline"
+            className="inline-block mt-6 bg-accent text-accent-foreground px-6 py-2.5 text-sm font-semibold rounded-sm hover:opacity-90 transition-opacity"
           >
-            Alle Bewertungen auf Google ansehen →
+            Alle Bewertungen auf Google lesen →
           </a>
         </div>
       </Section>

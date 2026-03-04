@@ -19,6 +19,8 @@ import Uebergabe from "./pages/Uebergabe";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
+import Galerie from "./pages/Galerie";
+import Gutschein from "./pages/Gutschein";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +42,8 @@ const App = () => (
             <Route path="/instruktorfahrt" element={<Instruktorfahrt />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/kontakt" element={<Kontakt />} />
+            <Route path="/galerie" element={<Galerie />} />
+            <Route path="/gutschein" element={<Gutschein />} />
             <Route path="/versicherung" element={<Versicherung />} />
             <Route path="/uebergabe" element={<Uebergabe />} />
             <Route path="/impressum" element={<Impressum />} />

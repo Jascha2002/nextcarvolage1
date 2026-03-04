@@ -6,6 +6,7 @@ import logoWhite from "@/assets/logo-white.png";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "Fahrzeuge", to: "/fahrzeuge" },
+  { label: "Galerie", to: "/galerie" },
   { label: "Anlässe", to: "/anlaesse" },
   { label: "Instruktorfahrt", to: "/instruktorfahrt" },
   { label: "Bewertungen", to: "/#bewertungen" },
@@ -18,6 +19,7 @@ const navLinks = [
     ],
   },
   { label: "Kontakt", to: "/kontakt" },
+  { label: "Gutschein", to: "/gutschein", highlight: true },
 ];
 
 export default function Header() {
@@ -85,7 +87,11 @@ export default function Header() {
               <Link
                 key={item.to}
                 to={item.to!}
-                className="text-sm font-medium text-foreground hover:text-accent transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  (item as any).highlight
+                    ? "bg-accent text-accent-foreground px-4 py-1.5 rounded-sm hover:opacity-90"
+                    : "text-foreground hover:text-accent"
+                }`}
               >
                 {item.label}
               </Link>
@@ -139,7 +145,13 @@ export default function Header() {
                 ))}
               </div>
             ) : (
-              <Link key={item.to} to={item.to!} className="font-display text-2xl text-foreground hover:text-accent">
+              <Link
+                key={item.to}
+                to={item.to!}
+                className={`font-display text-2xl hover:text-accent ${
+                  (item as any).highlight ? "text-accent" : "text-foreground"
+                }`}
+              >
                 {item.label}
               </Link>
             )
