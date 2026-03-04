@@ -24,7 +24,7 @@ import rs310 from "@/assets/gallery/rs3-10.jpg";
 import rs311 from "@/assets/gallery/rs3-11.jpg";
 import rs312 from "@/assets/gallery/rs3-12.jpg";
 
-type Category = "alle" | "mclaren" | "bmw" | "rs3" | "instagram";
+type Category = "alle" | "mclaren" | "bmw" | "rs3";
 
 interface GalleryImage {
   src: string;
@@ -34,23 +34,26 @@ interface GalleryImage {
 }
 
 const images: GalleryImage[] = [
-  { src: insta1, alt: "McLaren 720S", category: ["mclaren", "instagram"], tall: true },
+  // McLaren 720S
+  { src: insta1, alt: "McLaren 720S", category: ["mclaren"], tall: true },
+  { src: insta2, alt: "McLaren 720S Detail", category: ["mclaren"], tall: false },
+  { src: insta3, alt: "McLaren 720S Fahrt", category: ["mclaren"], tall: false },
+  { src: insta4, alt: "McLaren 720S Erlebnis", category: ["mclaren"], tall: true },
+  { src: insta5, alt: "McLaren 720S Perspektive", category: ["mclaren"], tall: false },
+  { src: insta6, alt: "McLaren 720S Moment", category: ["mclaren"], tall: true },
+  // BMW M3
   { src: bmw1, alt: "BMW M3 Competition", category: ["bmw"], tall: false },
-  { src: rs31, alt: "Audi RS3", category: ["rs3"], tall: true },
-  { src: insta2, alt: "McLaren 720S Detail", category: ["mclaren", "instagram"], tall: false },
   { src: bmw2, alt: "BMW M3 Seite", category: ["bmw"], tall: true },
-  { src: rs32, alt: "Audi RS3 Front", category: ["rs3"], tall: false },
-  { src: insta3, alt: "McLaren 720S Fahrt", category: ["mclaren", "instagram"], tall: false },
-  { src: rs33, alt: "Audi RS3 Seite", category: ["rs3"], tall: true },
   { src: bmw3, alt: "BMW M3 Detail", category: ["bmw"], tall: false },
-  { src: insta4, alt: "NextCar Erlebnis", category: ["mclaren", "instagram"], tall: true },
-  { src: rs34, alt: "Audi RS3 Heck", category: ["rs3"], tall: false },
   { src: bmw4, alt: "BMW M3 Front", category: ["bmw"], tall: true },
+  // Audi RS3
+  { src: rs31, alt: "Audi RS3", category: ["rs3"], tall: true },
+  { src: rs32, alt: "Audi RS3 Front", category: ["rs3"], tall: false },
+  { src: rs33, alt: "Audi RS3 Seite", category: ["rs3"], tall: true },
+  { src: rs34, alt: "Audi RS3 Heck", category: ["rs3"], tall: false },
   { src: rs35, alt: "Audi RS3 Detail", category: ["rs3"], tall: false },
-  { src: insta5, alt: "NextCar Instagram", category: ["instagram"], tall: false },
   { src: rs36, alt: "Audi RS3 Perspektive", category: ["rs3"], tall: true },
   { src: rs37, alt: "Audi RS3 Interieur", category: ["rs3"], tall: false },
-  { src: insta6, alt: "NextCar Moment", category: ["instagram"], tall: true },
   { src: rs38, alt: "Audi RS3 Rad", category: ["rs3"], tall: false },
   { src: rs39, alt: "Audi RS3 Spiegel", category: ["rs3"], tall: false },
   { src: rs310, alt: "Audi RS3 Auspuff", category: ["rs3"], tall: true },
@@ -63,7 +66,6 @@ const filters: { label: string; value: Category }[] = [
   { label: "McLaren 720S", value: "mclaren" },
   { label: "BMW M3", value: "bmw" },
   { label: "Audi RS3", value: "rs3" },
-  { label: "Instagram", value: "instagram" },
 ];
 
 export default function Galerie() {
