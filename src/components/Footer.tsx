@@ -45,7 +45,6 @@ export default function Footer() {
                 ["McLaren 720S", "/fahrzeuge/mclaren-720s"],
                 ["BMW M3 Competition", "/fahrzeuge/bmw-m3"],
                 ["Audi RS3", "/fahrzeuge/audi-rs3"],
-                ["Lamborghini Urus", "/fahrzeuge/lamborghini-urus"],
               ].map(([label, to]) => (
                 <li key={to}>
                   <Link to={to} className="text-[hsl(0,0%,60%)] hover:text-accent transition-colors">
