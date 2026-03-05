@@ -244,7 +244,7 @@ export default function Index() {
               transform: showElements ? 'translateY(0)' : 'translateY(20px)',
             }}
           >
-            Erleben Sie Supersportwagen der Extraklasse — McLaren, BMW, Audi und mehr. Ab einem Tag. Deutschlandweit geliefert.
+            Erleben Sie Supersportwagen der Extraklasse — McLaren, BMW, und Audi. Ab einem Tag. Deutschlandweit geliefert.
           </p>
 
           {/* Buttons */}
