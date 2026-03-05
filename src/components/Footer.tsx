@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoWhite from "@/assets/logo-white.png";
+import logo from "@/assets/logo-new.png";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & tagline */}
           <div>
-            <img src={logoWhite} alt="NextCar Logo" className="h-10 mb-4" />
+            <img src={logo} alt="NextCar Logo" className="h-10 mb-4 dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
             <p className="text-sm text-[hsl(0,0%,60%)]">Fahrspaß pur. Deutschlandweit.</p>
           </div>
 
