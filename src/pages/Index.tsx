@@ -182,19 +182,23 @@ export default function Index() {
     audiGallery2,
   ];
   const [heroSlideIndex, setHeroSlideIndex] = useState(0);
-  const [heroSlideFading, setHeroSlideFading] = useState(false);
+  const [nextSlideIndex, setNextSlideIndex] = useState(1);
+  const [crossfade, setCrossfade] = useState(0); // 0 = showing current, 1 = showing next
 
   useEffect(() => {
     if (!showBgImage) return;
     const interval = setInterval(() => {
-      setHeroSlideFading(true);
+      // Start crossfade to next image
+      setCrossfade(1);
       setTimeout(() => {
-        setHeroSlideIndex((prev) => (prev + 1) % heroSlideImages.length);
-        setHeroSlideFading(false);
-      }, 600);
+        // Swap: next becomes current, prepare new next
+        setHeroSlideIndex(nextSlideIndex);
+        setNextSlideIndex((nextSlideIndex + 1) % heroSlideImages.length);
+        setCrossfade(0);
+      }, 1200);
     }, 3000);
     return () => clearInterval(interval);
-  }, [showBgImage, heroSlideImages.length]);
+  }, [showBgImage, nextSlideIndex, heroSlideImages.length]);
 
 
   return (
