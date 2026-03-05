@@ -57,24 +57,6 @@ const vehicles = [
     ],
     description: "Der perfekte Mix aus Alltagstauglichkeit und Supersportler-Performance.",
   },
-  {
-    slug: "lamborghini-urus",
-    key: "urus",
-    title: "Lamborghini Urus",
-    tagline: "Der Super-SUV.",
-    badge: "DER SUPER-SUV",
-    category: "SUV",
-    img: "https://nextcar-exklusiv.de/wp-content/uploads/2024/08/61d18f1b-55d7-4299-bbf3-e3c92c8a93c2-1024x683.jpg",
-    price: "Auf Anfrage",
-    specs: [
-      ["Leistung", "650 PS"],
-      ["Motor", "V8 Biturbo"],
-      ["0-100 km/h", "3,6 Sekunden"],
-      ["Antrieb", "Allradantrieb"],
-      ["Getriebe", "8-Gang Automatik"],
-    ],
-    description: "Der wildeste SUV der Welt. Für alle die alles wollen — Luxus und Performance.",
-  },
 ];
 
 export function FahrzeugeListe() {
