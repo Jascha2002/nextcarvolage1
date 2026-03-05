@@ -215,13 +215,21 @@ export default function Index() {
           style={{ opacity: showVideo ? 1 : 0 }}
         />
 
-        {/* Background image - fades in during Phase 5 */}
+        {/* Background image layers for crossfade */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(${heroSlideImages[heroSlideIndex]})`,
-            opacity: showBgImage ? (heroSlideFading ? 0 : 1) : 0,
-            transition: 'opacity 0.6s ease-in-out',
+            opacity: showBgImage ? 1 : 0,
+            transition: 'opacity 1.2s ease-in-out',
+          }}
+        />
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${heroSlideImages[nextSlideIndex]})`,
+            opacity: showBgImage ? crossfade : 0,
+            transition: 'opacity 1.2s ease-in-out',
           }}
         />
 
