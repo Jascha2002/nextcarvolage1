@@ -61,7 +61,7 @@ const vehicles = [
 
 export function FahrzeugeListe() {
   const [filter, setFilter] = useState("Alle");
-  const categories = ["Alle", "Supersportwagen", "SUV", "Touring"];
+  const categories = ["Alle", "Supersportwagen", "Touring"];
   const filtered = filter === "Alle" ? vehicles : vehicles.filter((v) => v.category === filter);
 
   return (
