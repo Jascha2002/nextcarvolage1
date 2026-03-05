@@ -230,7 +230,7 @@ export default function Index() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${heroSlideImages[heroSlideIndex]})`,
+            backgroundImage: `url(${heroSlideImages[currentSlide]})`,
             opacity: showBgImage ? 1 : 0,
             transition: 'opacity 1.2s ease-in-out',
           }}
@@ -238,9 +238,9 @@ export default function Index() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${heroSlideImages[nextSlideIndex]})`,
-            opacity: showBgImage ? crossfade : 0,
-            transition: 'opacity 1.2s ease-in-out',
+            backgroundImage: `url(${heroSlideImages[nextSlide]})`,
+            opacity: showBgImage && showNext ? 1 : 0,
+            transition: showNext ? 'opacity 1.3s ease-in-out' : 'none',
           }}
         />
 
