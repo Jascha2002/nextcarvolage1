@@ -172,6 +172,30 @@ export default function Index() {
   const showVideo = heroPhase === 'video';
   const isDone = heroPhase === 'done';
 
+  // Hero background slideshow
+  const heroSlideImages = [
+    CARS.mclaren.img,
+    bmwGallery1,
+    audiGallery1,
+    "https://nextcar-exklusiv.de/wp-content/uploads/2024/08/61d18f1b-55d7-4299-bbf3-e3c92c8a93c2-1024x683.jpg",
+    bmwGallery2,
+    audiGallery2,
+  ];
+  const [heroSlideIndex, setHeroSlideIndex] = useState(0);
+  const [heroSlideFading, setHeroSlideFading] = useState(false);
+
+  useEffect(() => {
+    if (!showBgImage) return;
+    const interval = setInterval(() => {
+      setHeroSlideFading(true);
+      setTimeout(() => {
+        setHeroSlideIndex((prev) => (prev + 1) % heroSlideImages.length);
+        setHeroSlideFading(false);
+      }, 600);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [showBgImage, heroSlideImages.length]);
+
 
   return (
     <div>
@@ -191,9 +215,9 @@ export default function Index() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${CARS.mclaren.img})`,
-            opacity: showBgImage ? 1 : 0,
-            transition: isDone ? 'none' : 'opacity 1.5s ease-in-out',
+            backgroundImage: `url(${heroSlideImages[heroSlideIndex]})`,
+            opacity: showBgImage ? (heroSlideFading ? 0 : 1) : 0,
+            transition: 'opacity 0.6s ease-in-out',
           }}
         />
 
