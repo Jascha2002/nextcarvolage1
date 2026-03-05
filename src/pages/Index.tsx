@@ -181,24 +181,35 @@ export default function Index() {
     bmwGallery2,
     audiGallery2,
   ];
-  const [heroSlideIndex, setHeroSlideIndex] = useState(0);
-  const [nextSlideIndex, setNextSlideIndex] = useState(1);
-  const [crossfade, setCrossfade] = useState(0); // 0 = showing current, 1 = showing next
+  const slideCount = heroSlideImages.length;
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+  const [showNext, setShowNext] = useState(false);
+  const slideRef = useRef({ current: 0, next: 1 });
 
   useEffect(() => {
     if (!showBgImage) return;
     const interval = setInterval(() => {
-      // Start crossfade to next image
-      setCrossfade(1);
+      // Fade in the next image on top
+      setShowNext(true);
+
+      // After crossfade completes, swap layers instantly
       setTimeout(() => {
-        // Swap: next becomes current, prepare new next
-        setHeroSlideIndex(nextSlideIndex);
-        setNextSlideIndex((nextSlideIndex + 1) % heroSlideImages.length);
-        setCrossfade(0);
-      }, 1200);
-    }, 3000);
+        const newCurrent = slideRef.current.next;
+        const newNext = (newCurrent + 1) % slideCount;
+        slideRef.current = { current: newCurrent, next: newNext };
+        
+        // Instantly swap: make current = what was next, hide next layer
+        setCurrentSlide(newCurrent);
+        setShowNext(false);
+        // Set next image for the next transition (after hiding)
+        requestAnimationFrame(() => {
+          setNextSlide(newNext);
+        });
+      }, 1300);
+    }, 3500);
     return () => clearInterval(interval);
-  }, [showBgImage, nextSlideIndex, heroSlideImages.length]);
+  }, [showBgImage, slideCount]);
 
 
   return (
