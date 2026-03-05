@@ -7,6 +7,10 @@ import insta3 from "@/assets/instagram/insta-3.jpg";
 import insta4 from "@/assets/instagram/insta-4.jpg";
 import insta5 from "@/assets/instagram/insta-5.jpg";
 import insta6 from "@/assets/instagram/insta-6.jpg";
+import bmwGallery1 from "@/assets/gallery/bmw-1.jpg";
+import bmwGallery2 from "@/assets/gallery/bmw-3.jpg";
+import audiGallery1 from "@/assets/gallery/rs3-1.jpg";
+import audiGallery2 from "@/assets/gallery/rs3-3.jpg";
 
 const instaImages = [insta1, insta2, insta3, insta4, insta5, insta6];
 
