@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingElements from "./components/FloatingElements";
+import DeutLichtBadge from "./components/DeutLichtBadge";
 import CookieBanner from "./components/CookieBanner";
 import Index from "./pages/Index";
 import { FahrzeugeListe, FahrzeugDetail } from "./pages/Fahrzeuge";
@@ -59,6 +60,7 @@ const App = () => (
         </main>
         <Footer />
         <FloatingElements />
+        <DeutLichtBadge />
         <CookieBanner />
       </BrowserRouter>
     </TooltipProvider>
