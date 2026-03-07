@@ -91,6 +91,33 @@ export default function Footer() {
             </button>
           </div>
         </div>
+
+        <div
+          className="mt-4 pt-4 flex justify-center"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
+        >
+          <a
+            href="https://www.deutlicht.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-all duration-300 ease-in-out"
+            style={{
+              fontSize: 11,
+              color: "rgba(255,255,255,0.35)",
+              textDecoration: "none",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+              e.currentTarget.style.textDecoration = "underline";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "rgba(255,255,255,0.35)";
+              e.currentTarget.style.textDecoration = "none";
+            }}
+          >
+            Designed &amp; developed by DeutLicht®
+          </a>
+        </div>
       </div>
     </footer>
   );
