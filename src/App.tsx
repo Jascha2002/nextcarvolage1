@@ -60,6 +60,7 @@ const App = () => (
         </main>
         <Footer />
         <FloatingElements />
+        <DeutLichtBadge />
         <CookieBanner />
       </BrowserRouter>
     </TooltipProvider>
