@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Check, ChevronRight } from "lucide-react";
-import logoWhite from "@/assets/logo-white.png";
+import logo from "@/assets/logo-new.png";
 
 type Experience = "instruktor30" | "instruktor60" | "selbstfahren" | null;
 type Vehicle = "McLaren 720S" | "BMW M3" | "Audi RS3" | null;
@@ -37,7 +37,7 @@ function GutscheinPreview({ experience, vehicle, recipientName }: { experience: 
   return (
     <div className="bg-[hsl(0,0%,6%)] border border-[hsl(0,0%,20%)] rounded-sm p-8 max-w-md mx-auto text-center relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-[hsl(40,80%,50%)] to-accent" />
-      <img src={logoWhite} alt="NextCar" className="h-8 mx-auto mb-4" />
+      <img src={logo} alt="NextCar" className="h-8 mx-auto mb-4 dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
       <h3 className="font-display text-5xl text-[hsl(0,0%,100%)] tracking-wider">GUTSCHEIN</h3>
       <div className="w-16 h-0.5 bg-accent mx-auto my-4" />
       <p className="text-[hsl(0,0%,60%)] text-sm">Für:</p>
