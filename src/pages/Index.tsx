@@ -42,16 +42,6 @@ const CARS = {
     text: "Der perfekte Mix aus Alltagstauglichkeit und Supersportler-Performance.",
     link: "/buchen?car=audi",
   },
-  urus: {
-    img: "https://nextcar-exklusiv.de/wp-content/uploads/2024/08/61d18f1b-55d7-4299-bbf3-e3c92c8a93c2-1024x683.jpg",
-    badge: "DER SUPER-SUV",
-    title: "Lamborghini Urus",
-    specs: "650 PS | V8 | 0-100 in 3,6s",
-    price: "Auf Anfrage",
-    text: "Der wildeste SUV der Welt. Für alle die alles wollen — Luxus und Performance.",
-    link: "/kontakt",
-    btnText: "Anfragen",
-  },
 };
 
 const reviews = [

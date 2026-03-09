@@ -6,7 +6,7 @@ const cars = [
   { key: "mclaren", title: "McLaren 720S", price: 599, img: "https://nextcar-exklusiv.de/wp-content/uploads/2024/08/61d18f1b-55d7-4299-bbf3-e3c92c8a93c2-1024x683.jpg" },
   { key: "bmw", title: "BMW M3 Competition", price: 349, img: "https://nextcar-exklusiv.de/wp-content/uploads/2024/08/9fd90d7c-2b63-4dd6-96ca-93f9e41789f9-1024x683.jpg" },
   { key: "audi", title: "Audi RS3", price: 249, img: "https://nextcar-exklusiv.de/wp-content/uploads/2025/11/PHOTO-2025-11-05-09-05-05-1024x683.jpg" },
-  { key: "urus", title: "Lamborghini Urus", price: 0, img: "https://nextcar-exklusiv.de/wp-content/uploads/2024/08/61d18f1b-55d7-4299-bbf3-e3c92c8a93c2-1024x683.jpg" },
+  
 ];
 
 export default function Buchen() {

@@ -4,7 +4,7 @@ import { Check, ChevronRight } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
 
 type Experience = "instruktor30" | "instruktor60" | "selbstfahren" | null;
-type Vehicle = "McLaren 720S" | "BMW M3" | "Audi RS3" | "Lamborghini Urus" | null;
+type Vehicle = "McLaren 720S" | "BMW M3" | "Audi RS3" | null;
 
 const experiences = [
   {
@@ -30,7 +30,7 @@ const experiences = [
   },
 ];
 
-const vehicles: Vehicle[] = ["McLaren 720S", "BMW M3", "Audi RS3", "Lamborghini Urus"];
+const vehicles: Vehicle[] = ["McLaren 720S", "BMW M3", "Audi RS3"];
 
 function GutscheinPreview({ experience, vehicle, recipientName }: { experience: Experience; vehicle: Vehicle; recipientName: string }) {
   const expLabel = experiences.find((e) => e.id === experience)?.title || "—";
