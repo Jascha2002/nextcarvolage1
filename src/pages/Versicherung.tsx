@@ -34,7 +34,7 @@ export default function Versicherung() {
             <p className="text-muted-foreground">Bei Übergabe des Fahrzeugs wird eine Kaution hinterlegt. Die genaue Höhe ist abhängig vom gewählten Fahrzeug und wird bei der Buchungsbestätigung mitgeteilt. Nach unbeschädigter Rückgabe wird die Kaution vollständig erstattet.</p>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {["McLaren 720S", "BMW M3 Competition", "Audi RS3", "Lamborghini Urus"].map((car) => (
+            {["McLaren 720S", "BMW M3 Competition", "Audi RS3"].map((car) => (
               <div key={car} className="bg-card p-4 rounded-sm text-center">
                 <p className="font-display text-lg text-foreground">{car}</p>
                 <p className="text-accent text-sm mt-1">Auf Anfrage</p>

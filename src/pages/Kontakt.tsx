@@ -50,7 +50,7 @@ export default function Kontakt() {
                   <option value="mclaren">McLaren 720S</option>
                   <option value="bmw">BMW M3 Competition</option>
                   <option value="audi">Audi RS3</option>
-                  <option value="urus">Lamborghini Urus</option>
+                  
                 </select>
                 <textarea required placeholder="Nachricht *" value={form.nachricht} onChange={(e) => setForm({ ...form, nachricht: e.target.value })} rows={5} className="w-full bg-card border border-input rounded-sm px-3 py-2 text-foreground text-sm resize-none" />
                 <button type="submit" className="w-full bg-accent text-accent-foreground py-3 font-semibold rounded-sm hover:opacity-90 transition-opacity">

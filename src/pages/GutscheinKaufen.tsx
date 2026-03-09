@@ -30,7 +30,7 @@ const experiences = [
   },
 ];
 
-const vehicles: Vehicle[] = ["McLaren 720S", "BMW M3", "Audi RS3", "Lamborghini Urus"];
+const vehicles: Vehicle[] = ["McLaren 720S", "BMW M3", "Audi RS3"];
 
 function GutscheinPreview({ experience, vehicle, recipientName }: { experience: Experience; vehicle: Vehicle; recipientName: string }) {
   const expLabel = experiences.find((e) => e.id === experience)?.title || "—";
