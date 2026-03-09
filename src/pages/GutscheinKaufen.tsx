@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Check, ChevronRight } from "lucide-react";
-import logoWhite from "@/assets/logo-white.png";
+import logo from "@/assets/logo-new.png";
 
 type Experience = "instruktor30" | "instruktor60" | "selbstfahren" | null;
 type Vehicle = "McLaren 720S" | "BMW M3" | "Audi RS3" | null;
